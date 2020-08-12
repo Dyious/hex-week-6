@@ -3,22 +3,23 @@
     <nav class="navbor-height bg-place">
       <ul class="nav justify-content-around">
         <li>
-          <router-link to="/">首頁</router-link>
+          <router-link to="/">返回前台</router-link>
         </li>
         <li>
-          <router-link to="/about">關於</router-link>
+          <router-link to="/dashboard/products">產品列表</router-link>
         </li>
         <li>
-          <router-link to="/products">產品列表</router-link>
+          <router-link to="/dashboard/coupons">優惠券列表</router-link>
         </li>
         <li>
-          <router-link to="/cart">購物車列表</router-link>
+          <router-link to="/dashboard/orders">訂單列表</router-link>
         </li>
         <li>
-          <router-link to="/dashboard">後台管理</router-link>
+          <router-link to="/dashboard/imageCatch">圖片儲存列表</router-link>
         </li>
       </ul>
     </nav>
+    <h2 class="p-3">後臺管理</h2>
     <router-view />
   </div>
 </template>

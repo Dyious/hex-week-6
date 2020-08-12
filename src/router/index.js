@@ -7,17 +7,53 @@ Vue.use(VueRouter)
 const routes = [
   {
     path: '/',
-    name: 'Home',
-    component: Home
+    component: Home,
+    children: [
+      {
+        path: 'about',
+        component: () => import('../views/font/About.vue')
+      },
+      {
+        path: 'cart',
+        component: () => import('../views/font/Cart.vue')
+      },
+      {
+        path: 'products',
+        component: () => import('../views/font/Products.vue')
+      },
+      {
+        path: 'product/:id',
+        component: () => import('../views/font/Product.vue')
+      }
+    ]
   },
   {
-    path: '/about',
-    name: 'About',
-    // route level code-splitting
-    // this generates a separate chunk (about.[hash].js) for this route
-    // which is lazy-loaded when the route is visited.
-    component: () => import(/* webpackChunkName: "about" */ '../views/About.vue')
+    path: '/dashboard',
+    component: () => import('../views/dashboard/Dashboard.vue'),
+    children: [
+      {
+        path: 'products',
+        component: () => import('../views/dashboard/Products.vue')
+      },
+      {
+        path: 'coupons',
+        component: () => import('../views/dashboard/Coupons.vue')
+      },
+      {
+        path: 'orders',
+        component: () => import('../views/dashboard/Orders.vue')
+      },
+      {
+        path: 'imageCatch',
+        component: () => import('../views/dashboard/ImageCatch.vue')
+      }
+    ]
+  },
+  {
+    path: '*',
+    redicect: '/'
   }
+
 ]
 
 const router = new VueRouter({
